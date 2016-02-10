@@ -1,0 +1,7 @@
+- hosts: raspberry
+  remote_user: pi
+  become: yes
+  vars:
+    user: pi
+  roles:
+    - crawler

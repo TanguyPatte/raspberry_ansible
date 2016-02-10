@@ -1,0 +1,11 @@
+- name: Template script
+  template:
+    src: crawler.py.j2
+    dest: "{{ crawler_directory}}crawler.py"
+
+- name: Template supervisor conf
+  template:
+    src: crawler-supervisor.conf.j2
+    dest: "{{ supervisor_conf_path }}crawler-supervisor.conf"
+  notify:
+    - Restart supervisor

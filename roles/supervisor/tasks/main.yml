@@ -1,0 +1,16 @@
+
+- name: Install python and deps
+  apt: name="{{ item }}" state=present
+  with_items:
+    - python-pip
+    - python-virtualenv
+    - libffi-dev
+
+- name: Install supervisor
+  apt: name=supervisor state=present
+
+- name: Start supervisor service
+  service: name=supervisor state=started
+
+- name: Enable autorestart supervisor
+  service: name=supervisor enabled=true

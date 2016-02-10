@@ -1,0 +1,8 @@
+- name: Restart supervisor
+  service:
+    name: supervisor
+    state: restarted
+  register: result
+  until: not result|failed
+  retries: 3
+  delay: 10

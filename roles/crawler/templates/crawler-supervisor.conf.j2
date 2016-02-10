@@ -1,0 +1,7 @@
+[program:crawler]
+directory={{crawler_directory}}
+user={{ user }}
+command=/usr/bin/python crawler.py
+autostart=true
+autorestart=true
+redirect_stderr=true
